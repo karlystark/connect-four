@@ -38,16 +38,24 @@ function makeHtmlBoard() {
   const htmlBoard = document.getElementById('board');
 
   // TODO: add comment for this code
+  //creating top table row
   const top = document.createElement("tr");
+  //setting it's attribute to id and it's name of colum-top
   top.setAttribute("id", "column-top");
+  //add an event listner to top on click call handleClick
   top.addEventListener("click", handleClick);
 
   // TODO: add comment for this code
+  //looping using width to creating a row of 7
   for (let x = 0; x < WIDTH; x++) {
+    //create the element of a td
     const headCell = document.createElement("td");
+    //set the headCell attritbute to an id and give it the name of top-x (curr value of x)
     headCell.setAttribute("id", `top-${x}`);
+    //append to top the headcell
     top.append(headCell);
   }
+  //append the htmlBoard with the top tr element
   htmlBoard.append(top);
 
   // dynamically creates the main part of html board
