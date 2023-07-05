@@ -34,21 +34,16 @@ function makeHtmlBoard() {
   const htmlBoard = document.getElementById('board');
 
   // TODO: add comment for this code
-  //creating top table row
+  //creating top clickable row
   const top = document.createElement("tr");
-  //setting it's attribute to id and it's name of colum-top
   top.setAttribute("id", "column-top");
-  //add an event listner to top on click call handleClick
   top.addEventListener("click", handleClick);
 
   // TODO: add comment for this code
-  //looping using width to creating a row of
+  //create top row cells and append to top row
   for (let x = 0; x < WIDTH; x++) {
-    //create the element of a td
     const headCell = document.createElement("td");
-    //set the headCell attritbute to an id and give it the name of top-x (curr value of x)
     headCell.setAttribute("id", `top-${x}`);
-    //append to top the headcell
     top.append(headCell);
   }
   //append the htmlBoard with the top tr element
@@ -66,7 +61,7 @@ function makeHtmlBoard() {
 
       // TODO: add an id, c-y-x, to the above table cell element
       // you'll use this later, so make sure you use c-y-x
-      cell.setAttribute("id", "c-y-x");
+      cell.setAttribute("id", `c-${y}-${x}`);
       // TODO: append the table cell to the table row
       row.append(cell);
     }
